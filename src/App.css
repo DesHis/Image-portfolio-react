@@ -1,0 +1,156 @@
+@font-face {
+    font-family: CustomFont;
+    src: url(example.ttf);
+  }
+
+body {
+    background-color:#282c34;
+    color: white;
+    padding: 20px;
+    padding-top: 0px;
+    /*font-family: CustomFont;*/
+    font-family: Arial;
+    text-align: center;
+}
+
+.imgRow {
+    display: flex;
+    flex-direction:row;
+    background-color:#282c34;
+}
+
+.imageOuter{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.imageOuter:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.imageInner{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.imageInner img{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.imageInner img:hover{
+    object-fit: cover;
+    height: auto;
+    height: 100%;
+    width: 100%;
+    cursor:pointer;
+}
+
+img {
+    display: none;
+}
+
+img[src] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+ .dimBackground{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200vw;
+    height: 200vh;
+    background-color: black;
+    opacity: 0.8;
+ }
+
+ .bigImage{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+ }
+
+ .image{
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 65vh;
+}
+
+.image img{
+    object-fit: contain;
+    height: 100%;
+    min-width: 100%;
+    max-width: 90vw;
+ }
+
+ .bigImage div:not(.image){
+    min-height: 2em;
+    background-color: #2f4f4f; 
+ }
+ .bigImage div:hover:not(.title):not(.image){
+    cursor:pointer;
+    text-decoration: underline;
+    filter: brightness(120%); 
+}
+ .bigImage p{
+ padding-top: 0.7vh;
+}
+.previous{
+    margin-top:5px;
+    width:30%;
+    float:left;
+    margin-bottom: 2.5vh;
+}
+.next{
+    margin-top:5px;
+    width:30%;
+    float:right;
+    margin-bottom: 2.5vh;
+}
+.close{
+    margin-top:5vh;
+    float: top;
+    margin-left: calc(100% - 5vh - 10px);
+    margin-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden ;
+}
+.btn-close{
+    font-size: 20px;
+    float: left;
+    width: 5vh;
+    height: 5vh;
+    vertical-align: middle;
+}
+.title{
+    max-width: 100%;
+    padding:0.25em;
+    margin-top:5px;
+    overflow:auto;
+    max-height:18vh;
+    text-align: center;
+}
+.title h1{
+    padding:0px;
+    margin:0px;
+}
